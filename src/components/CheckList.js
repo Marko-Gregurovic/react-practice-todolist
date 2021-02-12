@@ -26,7 +26,11 @@ class CheckList extends React.Component {
         this.setState(prevState => {
             const newItems = prevState.items.map(item => {
                 if(item.id === id){
-                    item.completed = !item.completed;
+                    return {
+                        ...item,
+                        completed: !item.completed
+                        
+                    }
                 }
                 return item;
             });
